@@ -5,6 +5,7 @@ pipeline {
 steps{
 script{
 sh 'cd webui'
+    sh  'export PATH=/sbin:/usr/sbin:/usr/bin:/usr/local/bin'
 sh 'npm install' 
     sh 'ng build --prod --aot=true'
     sh 'cd ..'
