@@ -3,9 +3,7 @@ pipeline {
   stages {
       stage('npm') {
 steps{
-    script{
-sh 'java -jar ./target/app-1.0.0.jar stop'
-}
+    
     dir('webui'){
         sh 'npm install'
         sh 'ng build --prod --aot=true' 
@@ -25,7 +23,8 @@ sh 'mvn clean install'
 stage('jar') {
 steps{
 script{
-sh 'java -jar ./target/app-1.0.0.jar'
+    sh 'java -jar ./target/app-1.0.0.jar stop'
+    sh 'java -jar ./target/app-1.0.0.jar'
 }
 }
 }
