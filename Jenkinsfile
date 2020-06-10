@@ -4,7 +4,7 @@ pipeline {
       stage('npm') {
 steps{
 script{
-    echo %WORKSPACE%
+  sh  'echo %WORKSPACE%'
 sh 'cd webui'
    sh 'pwd'
 sh 'npm install' 
