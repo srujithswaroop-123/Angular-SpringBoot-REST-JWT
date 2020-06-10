@@ -7,6 +7,7 @@ script{
   sh  'echo %WORKSPACE%'
 sh 'cd webui'
    sh 'pwd'
+    sh 'ls'
 sh 'npm install' 
     sh 'ng build --prod --aot=true'
     sh 'cd ..'
