@@ -4,8 +4,9 @@ pipeline {
       stage('npm') {
 steps{
 script{
+    echo '%WORKSPACE%'
 sh 'cd webui'
-   
+   echo '%WORKSPACE%'
 sh 'npm install' 
     sh 'ng build --prod --aot=true'
     sh 'cd ..'
